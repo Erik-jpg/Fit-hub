@@ -1,0 +1,23 @@
+{
+  "name": "fit-hub",
+  "version": "1.0.0",
+  "description": "Learn how to use serverless functions in less than 30 minutes!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erik-jpg/Fit-hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erik-jpg/Fit-hub/issues"
+  },
+  "homepage": "https://github.com/Erik-jpg/Fit-hub#readme",
+  "dependencies": {
+    "netlify-cli": "^2.37.0"
+  }
+}
