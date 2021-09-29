@@ -16,6 +16,7 @@ router.post("/api/Exercises", async (req, res) => {
   const createdWorkout = await Workout.create({ day: Date.now(), ...req.body });
   res.status(201).json(createdWorkout);
 });
+// use sort here?
 
 router.put("/api/Exercises/:id", async (req, res) => {
   const addedToWorkout = await Workout.findByIdAndUpdate(
@@ -53,6 +54,6 @@ router.get("/api/Exercises/range", async (req, res) => {
 });
 //look sort and limit methods to add to aggregate. 
 
-//add delete route
+
 
 module.exports = router;
