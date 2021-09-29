@@ -29,3 +29,6 @@
 // const Workout = mongoose.model('Workout', WorkoutSchema);
 
 // module.exports = Workout;
+
+// I am adding this to allow for a push to see if I correctly linked new
+// git repo and the local code.
