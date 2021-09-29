@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const db = require('../models');
 
-mongoose.connect('mongodb://localhost/workout', {
+mongoose.connect('mongodb+srv://Person-shared-with:someone_to_share_with42@cluster0.6o6fe.mongodb.net/', {
   useNewUrlParser: true,
-  useFindAndModify: false,
+  // useFindAndModify: false,
   useUnifiedTopology: true,
 });
+
+// mongodb+srv://Person-shared-with:someone_to_share_with42@cluster0.6o6fe.mongodb.net/test
 
 const workoutSeed = [
   {
