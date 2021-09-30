@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
-mongoose.connect('mongodb+srv://Person-shared-with:share_with_someone42@cluster0.6o6fe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Eriksphone:cxzdsa321@myfirstcluster.bomcv.mongodb.net/test);
 // ('mongodb://localhost/workout');
 // needs to be formatted for Heroku
 

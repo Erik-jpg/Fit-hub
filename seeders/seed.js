@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const db = require('../models');
 
-mongoose.connect('mongodb+srv://Person-shared-with:someone_to_share_with42@cluster0.6o6fe.mongodb.net/', {
+mongoose.connect('mongodb+srv://Eriksphone:cxzdsa321@myfirstcluster.bomcv.mongodb.net/test', {
   useNewUrlParser: true,
   // useFindAndModify: false,
   useUnifiedTopology: true,
