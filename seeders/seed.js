@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const db = require('../models');
+require('dotenv').config();
 
-mongoose.connect('mongodb+srv://Eriksphone:cxzdsa321@myfirstcluster.bomcv.mongodb.net/test', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
-  // useFindAndModify: false,
+  useFindAndModify: false,
   useUnifiedTopology: true,
+  useCreateIndex: true
 });
-
-// mongodb+srv://Person-shared-with:someone_to_share_with42@cluster0.6o6fe.mongodb.net/test
 
 const workoutSeed = [
   {
@@ -130,7 +130,7 @@ const workoutSeed = [
 db.Workout.deleteMany({})
   .then(() => db.Workout.collection.insertMany(workoutSeed))
   .then((data) => {
-    console.log(data.result.n + ' records inserted!');
+    console.log(`${data.insertedCount} records inserted!`);
     process.exit(0);
   })
   .catch((err) => {

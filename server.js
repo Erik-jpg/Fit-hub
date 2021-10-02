@@ -1,24 +1,29 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const Workout = require('./models/Workout');
+// const Workout = require('./models/Exercises');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
+require('dotenv').config();
+const routes = require('./routes/index');
 
 const PORT = process.env.PORT || 8080;
 
 app.use(morgan('combined'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use("/", routes);
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Eriksphone:cxzdsa321@myfirstcluster.bomcv.mongodb.net/test);
-// ('mongodb://localhost/workout');
-// needs to be formatted for Heroku
 
-app.use(require('./Routes/apiRoutes'))
-app.use(require('./Routes/htmlRoutes'))
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+}).catch((err) => {
+    console.log("Error coming from mongoose: ", err)
+});
 
-
-app.listen(PORT,  console.log('connected to mongo'));
+app.listen(PORT,  console.log(`connected to http://localhost:${PORT}`));
