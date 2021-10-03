@@ -5,7 +5,7 @@ const app = express();
 const path = require('path');
 const morgan = require('morgan');
 require('dotenv').config();
-const routes = require('./routes');
+// const routes = require('./routes');
 
 const PORT = process.env.PORT || 8080;
 
@@ -26,6 +26,6 @@ mongoose.connect(process.env.MONGODB_URI, {
     console.log("Error coming from mongoose: ", err)
 });
 
-app.use(routes);
+app.use(require("./routes"));
 
 app.listen(PORT,  console.log(`connected to http://localhost:${PORT}`));
