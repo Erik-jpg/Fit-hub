@@ -5,7 +5,7 @@ const app = express();
 const path = require('path');
 const morgan = require('morgan');
 require('dotenv').config();
-const routes = require('./routes/index');
+const routes = require('./routes');
 
 const PORT = process.env.PORT || 8080;
 
