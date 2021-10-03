@@ -13,7 +13,7 @@ app.use(morgan('combined'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use("/", routes);
+
 
 
 
@@ -25,5 +25,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 }).catch((err) => {
     console.log("Error coming from mongoose: ", err)
 });
+
+app.use(routes);
 
 app.listen(PORT,  console.log(`connected to http://localhost:${PORT}`));
